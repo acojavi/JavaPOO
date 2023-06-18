@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class Operacion {
 
 
-    private double numero1;
-    private double numero2;
+    private int numero1;
+    private int numero2;
 
 
-    public Operacion(double numero1, double numero2) {
+    public Operacion(int numero1, int numero2) {
         this.numero1 = numero1;
         this.numero2 = numero2;
     }
@@ -22,7 +22,7 @@ public class Operacion {
         return numero1;
     }
 
-    public void setNumero1(double numero1) {
+    public void setNumero1(int numero1) {
         this.numero1 = numero1;
     }
 
@@ -30,26 +30,26 @@ public class Operacion {
         return numero2;
     }
 
-    public void setNumero2(double numero2) {
+    public void setNumero2(int numero2) {
         this.numero2 = numero2;
     }
 
     public void crearOperacion() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el primer numero: ");
-        this.numero1 = sc.nextDouble();
+        this.numero1 = sc.nextInt();
         System.out.println("Ingrese el segundo numero: ");
-        this.numero2 = sc.nextDouble();
+        this.numero2 = sc.nextInt();
     }
 
-    public double sumar() {
+    public int sumar() {
         return numero1 + numero2;
     }
     public double restar(){
         return numero1 - numero2;
     }
 
-    public double multiplicar(){
+    public int multiplicar(){
         if (numero2 == 0) {
             System.out.println("No se puede multiplicar por 0");
             return 0;
@@ -57,7 +57,7 @@ public class Operacion {
         return numero1 * numero2;
     }
 
-    public double dividir(){
+    public int dividir(){
         if (numero2 == 0) {
             System.out.println("No se puede dividir por 0");
             return 0;
