@@ -8,7 +8,6 @@ public class Cuenta {
     private int saldoActual;
 
     public Cuenta() {
-        // Constructor por defecto
     }
 
     public Cuenta(long dni, int numeroCuenta) {

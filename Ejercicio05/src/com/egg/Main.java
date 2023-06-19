@@ -7,7 +7,6 @@ public class Main {
         Cuenta cuenta = new Cuenta();
         cuenta.crearCuenta();
 
-        // Ejemplo de uso de los métodos
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese la cantidad a ingresar: ");
@@ -23,6 +22,6 @@ public class Main {
         cuenta.extraccionRapida();
         cuenta.consultarSaldo();
 
-        cuenta.consultarDatos(); // Mostrar todos los datos del usuario
+        cuenta.consultarDatos(); // Mostrar datos del usuario al final
     }
 }
