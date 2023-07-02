@@ -21,7 +21,6 @@ public class Main {
 
         cuenta.extraccionRapida();
         cuenta.consultarSaldo();
-
         cuenta.consultarDatos(); // Mostrar datos del usuario al final
     }
 }
