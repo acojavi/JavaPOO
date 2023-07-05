@@ -1,4 +1,4 @@
-package Ejercicio_Extra_02;
+package Main;
 import Entidades.Puntos;
 import Servicios.PuntosServicio;
 
