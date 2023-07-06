@@ -37,7 +37,7 @@ public class CafeteraServicios {
         caf.setCantidadActual(caf.getCantidadActual()+cafeextra);
     }
 
-    public void Menu(Cafetera caf) {
+    public void Menu(Cafetera caf){
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese la opción que desea: ");
