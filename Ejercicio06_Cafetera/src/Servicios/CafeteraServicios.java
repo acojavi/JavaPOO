@@ -10,7 +10,7 @@ public class CafeteraServicios {
         Cafetera caf = new Cafetera();
         System.out.println("Ingrese la capacidad maxima de la cafetera: ");
         caf.setCapacidadMaxima(teclado.nextInt());
-        caf.setCantidadActual(0); // no hace falta creo
+        caf.setCantidadActual(0); // no hace porque se deberia inicializar en 0 pero bueno
         return caf;
     }
 
@@ -33,12 +33,11 @@ public class CafeteraServicios {
         caf.setCantidadActual(0);
     }
 
-    public void agregarCafe(int cafeextra,Cafetera caf) {
+    public void agregarCafe(int cafeextra,Cafetera caf){
         caf.setCantidadActual(caf.getCantidadActual()+cafeextra);
     }
 
-    public void Menu(Cafetera caf)
-    {
+    public void Menu(Cafetera caf) {
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese la opción que desea: ");
@@ -47,9 +46,10 @@ public class CafeteraServicios {
         System.out.println("3. Vaciar Cafetera");
         System.out.println("4. Agregar Café");
         System.out.println("5. Salir");
+
         int opc = teclado.nextInt();
-        switch(opc)
-        {
+        switch(opc){
+
             case 1:
                 llenarCafetera(caf);
                 System.out.println("Cafetera llena: " + caf.getCapacidadMaxima());
@@ -57,18 +57,17 @@ public class CafeteraServicios {
                 break;
 
             case 2:
-                if(caf.getCantidadActual()>0)
-                {
+                if(caf.getCantidadActual()>0){
                     System.out.println("Digite la cantidad que desea servir");
 
                     int cantidad = servirTaza(teclado.nextInt(), caf);
                     if(caf.getCantidadActual()<0)
-                        System.out.println("No hay suficiente cafe, solamente se llenó: "+ cantidad);
+                        System.out.println("No hay suficiente cafe, solamente se llenó una taza con: "+ cantidad);
                     else
                         System.out.println("Se sirvió la taza con éxito");
+                } else {
+                    System.out.println("La cafetera está vacía. Agregue más café");
                 }
-                else
-                    System.out.println("La cafetera está vacía. Debe llenarla o agregar café");
                 Menu(caf);
                 break;
 
@@ -79,16 +78,13 @@ public class CafeteraServicios {
                 break;
 
             case 4:
-                System.out.println("Digite la cantidad de café que desea agregar");
+                System.out.println("Ingrese la cantidad de café que desea agregar: ");
                 int agregar = teclado.nextInt();
                 agregarCafe(agregar, caf);
-                if(caf.getCantidadActual()>caf.getCapacidadMaxima())
-                {
+                if(caf.getCantidadActual()>caf.getCapacidadMaxima()) {
                     System.out.println("Sobraron " + (caf.getCantidadActual() - caf.getCapacidadMaxima()) + ", la cafetera quedó llena");
                     llenarCafetera(caf);
-                }
-                else
-                {
+                } else {
                     System.out.println("Se agregó " + agregar + " a la cafetera, quedó en total: " + caf.getCantidadActual());
                 }
                 Menu(caf);

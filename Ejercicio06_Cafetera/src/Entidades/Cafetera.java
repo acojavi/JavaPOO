@@ -29,7 +29,6 @@ public class Cafetera {
         this.cantidadActual = cantidadActual;
     }
 
-
     //toString ---> mostrar por cadena los atributos de cada clase
     @Override
     public String toString() {
