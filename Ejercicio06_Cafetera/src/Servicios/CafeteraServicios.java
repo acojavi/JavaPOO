@@ -10,7 +10,11 @@ public class CafeteraServicios {
         Cafetera caf = new Cafetera();
         System.out.println("Ingrese la capacidad maxima de la cafetera: ");
         caf.setCapacidadMaxima(teclado.nextInt());
+<<<<<<< HEAD
         caf.setCantidadActual(0); // no hace falta porque se debería inicializar en 0 pero bueno
+=======
+        caf.setCantidadActual(0); // no hace falta porque se deberia inicializar en 0 pero bueno
+>>>>>>> 092b39c886ab49af4efe5c8fea67962d56cce5da
         return caf;
     }
 
