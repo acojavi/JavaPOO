@@ -19,13 +19,15 @@ public class PersonaServicio {
         persona.setPeso(teclado.nextDouble());
         System.out.println("Ingrese la altura de la persona: ");
         persona.setAltura(teclado.nextDouble());
+        char sexo;
         do {
-            System.out.println("Digite el sexo ('M','H','O')");
-            persona.setSexo(teclado.next().charAt(0));
-            if(!String.valueOf(persona.getSexo()).equalsIgnoreCase("H") && !String.valueOf(persona.getSexo()).equalsIgnoreCase("M") && !String.valueOf(persona.getSexo()).equalsIgnoreCase("O"))
+            System.out.println("Digite el sexo ('M', 'H', 'O'): ");
+            sexo = Character.toUpperCase(teclado.next().charAt(0));
+            if (validarSexo(sexo)) {
                 System.out.println("El sexo que digitaste no es válido, vuelve a intentar");
-        } while (!String.valueOf(persona.getSexo()).equalsIgnoreCase("H") && !String.valueOf(persona.getSexo()).equalsIgnoreCase("M") && !String.valueOf(persona.getSexo()).equalsIgnoreCase("O"));
-
+            }
+        } while (validarSexo(sexo));
+        persona.setSexo(sexo);
         return persona;
     }
 
@@ -38,6 +40,11 @@ public class PersonaServicio {
             return 0;
         else
             return 1;
+    }
+
+    public boolean validarSexo(char sexo) {
+        sexo = Character.toUpperCase(sexo);  // Convertir a mayúsculas para hacer la validación más flexible
+        return sexo != 'H' && sexo != 'M' && sexo != 'O';
     }
 
     public boolean esMayorDeEdad(Persona persona){
