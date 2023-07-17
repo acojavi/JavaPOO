@@ -62,16 +62,10 @@ public class CuentaServicio {
         System.out.println("El DNI es: " + cuenta.getDniCliente());
         System.out.println("El saldo actual es: " + cuenta.getSaldoActual());
     }
-
-
     public void Menu(Cuenta cuenta) {
-        System.out.println("Ingrese la opción que desea");
-        System.out.println("1. Deposito");
-        System.out.println("2. Retiro");
-        System.out.println("3. Extracción rápida");
-        System.out.println("4. Consultar saldo");
-        System.out.println("5. Consultar datos");
-        System.out.println("6. Salir");
+        System.out.println("\nPor favor, indique la acción a realizar marcando el número correspondiente: ");
+        System.out.println("\n1) Ingresar saldo\n2) Retirar saldo\n3) Extracción rápida\n4) Consultar saldo\n5) Salir del sistema");
+
         int opc = teclado2.nextInt();
         switch(opc)
         {
@@ -96,10 +90,6 @@ public class CuentaServicio {
                 Menu(cuenta);
                 break;
             case 5:
-                consultarDatos(cuenta);
-                Menu(cuenta);
-                break;
-            case 6:
                 System.out.println("Gracias, saludos a la familia!");
                 break;
             default:
