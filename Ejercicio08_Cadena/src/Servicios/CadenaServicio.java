@@ -48,7 +48,7 @@ public class CadenaServicio {
                 contLetra++;
             }
         }
-        System.out.println("el caracter '"+ c + "' se repite: "+contLetra+" veces");
+        System.out.println("el caracter '"+ c + "' se repite: " + contLetra +" veces");
     }
 
     // Método compararLongitud(String frase), deberá comparar la longitud de la frase que
@@ -89,8 +89,4 @@ public class CadenaServicio {
         String frase = cadena.getFrase().toLowerCase();
         return frase.contains(letra.toLowerCase());
     }
-
-
-
-
 }
